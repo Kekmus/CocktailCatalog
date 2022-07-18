@@ -1,14 +1,17 @@
-import ControlCard from "./ControlCard"
+import ControlCard from "./CardsControl"
 import CocktailCard from "./CocktailCard"
+import "../styles/Main.css"
 
 function Main() {
   return (
     <main class="main__container">
       <ControlCard />
-      <CocktailCard />
-      <CocktailCard />
-      <CocktailCard />
-      <CocktailCard />
+      <div class="cocktail-list">
+        <CocktailCard />
+        <CocktailCard />
+        <CocktailCard />
+        <CocktailCard />
+      </div>
     </main>
   )
 }

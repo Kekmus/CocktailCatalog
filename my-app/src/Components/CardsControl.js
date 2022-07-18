@@ -1,8 +1,8 @@
-
+import "../styles/CardsControl.css"
 
 function ControlCard() {
   return (
-    <div className="control_container">
+    <div className="control__container">
       <input
         type="text"
         placeholder="Let's find some drinks...">

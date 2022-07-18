@@ -1,0 +1,11 @@
+:root {
+  --header-color: rgba(43, 55, 67, 1);
+  --main-color: rgba(31, 42, 53, 1);
+  --text-color: rgba(255, 255, 255, 1);
+  --card-color: rgba(53, 56, 48, 1);
+}
+
+body {
+  background-color: var(--main-color);
+}
+

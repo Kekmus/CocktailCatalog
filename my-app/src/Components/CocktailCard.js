@@ -1,4 +1,4 @@
-
+import "../styles/CocktailCard.css"
 
 function CocktailCard() {
   return(

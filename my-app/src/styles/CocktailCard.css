@@ -1,0 +1,43 @@
+.cocktail-item {
+  width: 350px;
+  height: 400px;
+  background-color: var(--card-color);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.cocktail-item__name {
+  font-size: 24px;
+  color: var(--text-color)
+}
+
+.cocktail-item__close-button {
+  background-color: var(--card-color);
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  position: relative;
+  bottom: 405px;
+  left: 330px;
+  min-height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: none;
+  cursor: pointer;
+}
+
+.cocktail-item__close-button:after {
+  content: '\d7';
+  font-size: 35px;
+}
+
+
+@media (any-hover: hover) {
+  .cocktail-item:hover > .cocktail-item__close-button {
+      display: inline-block;
+  }
+}

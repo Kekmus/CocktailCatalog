@@ -1,0 +1,19 @@
+.header {
+  height: 100px;
+  width: 100%;
+  background-color: var(--header-color);
+}
+
+.header__container {
+  height: 100%;
+  padding: 0 40px;
+}
+
+.logo {
+  height: 100%;
+  text-transform: uppercase;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
