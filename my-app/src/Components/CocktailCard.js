@@ -1,6 +1,6 @@
 import "../styles/CocktailCard.css"
 
-function CocktailCard() {
+function CocktailCard({name}) {
   return(
     <div className="cocktail-item">
       <img
@@ -8,7 +8,7 @@ function CocktailCard() {
         src="http://dummyimage.com/350"
         alt="cocktail"
       />
-      <p className="cocktail-item__name">Margarita</p>
+      <p className="cocktail-item__name">{name}</p>
       <button className="cocktail-item__close-button" />
     </div>
 
