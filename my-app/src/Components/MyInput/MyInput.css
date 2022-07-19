@@ -1,0 +1,16 @@
+.control__container > input {
+  padding: 6px;
+  border: none;
+  font-size: 20px;
+  height: 35px;
+}
+
+.control__container > input {
+  width: 400px;
+  background-color: var(--header-color);
+  color: var(--text-color)
+}
+
+.control__container > input::placeholder {
+  color: var(--text-color)
+}

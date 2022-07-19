@@ -1,22 +1,16 @@
+import MyInput from "./MyInput/MyInput"
+import MySelect from "./MySelect/MySelect"
 import "../styles/CardsControl.css"
 
 function ControlCard({options, value, onChange}) {
   return (
     <div className="control__container">
-      <input
-        type="text"
-        placeholder="Let's find some drinks...">
-      </input>
-      <select
-        name="sortType"
-        id=""
+      <MyInput />
+      <MySelect
+        options={options}
         value={value}
-        onChange={event => onChange(event.target.value)}
-      >
-        {options.map(option =>
-          <option key={option.value} value={option.value}>{option.name}</option>
-        )}
-      </select>
+        onChange={onChange}
+      />
     </div>
   )
 }
