@@ -2,14 +2,18 @@ import MyInput from "./MyInput/MyInput"
 import MySelect from "./MySelect/MySelect"
 import "../styles/CardsControl.css"
 
-function ControlCard({options, value, onChange}) {
+function ControlCard({options, valueInput, onChangeInput, onChangeSelect, valueSelect}) {
   return (
     <div className="control__container">
-      <MyInput />
+      <MyInput
+        placeholder={"Let's find some drinks..."}
+        value={valueInput}
+        onChange={onChangeInput}
+      />
       <MySelect
         options={options}
-        value={value}
-        onChange={onChange}
+        value={valueSelect}
+        onChange={onChangeSelect}
       />
     </div>
   )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import ControlCard from "./CardsControl"
 import CocktailList from "./CocktailList"
 import "../styles/Main.css"
@@ -14,13 +14,26 @@ function Main() {
       {strDrink: 'Kek5', idDrink:'5555'},
     ]);
 
-  const [selectedSort, setSelectedSort] = useState();
+  const [selectedSort, setSelectedSort] = useState('');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const sortedPosts = useMemo(() => {
+    console.log('kek')
+    if(selectedSort) {
+      return [...cocktails].sort((a, b) =>{ return a[selectedSort].localeCompare(b[selectedSort])})
+    } else {
+      return cocktails
+    }
+  }, [selectedSort, cocktails]);
+
+  const sortedSerchedPosts = useMemo(() => {
+    return sortedPosts.filter(post => {
+      return post.strDrink.toLowerCase().includes(searchQuery.toLowerCase())
+    })
+  }, [searchQuery, sortedPosts])
 
   function sortPosts(sort) {
     setSelectedSort(sort)
-    setCoctails([...cocktails].sort((a, b) =>{
-      return a[sort].localeCompare(b[sort])
-    }))
   }
 
   return (
@@ -30,10 +43,12 @@ function Main() {
           {value: 'strDrink', name: 'По имени'},
           {value: 'idDrink', name: 'По ID'}
         ]}
-        value={selectedSort}
-        onChange={sortPosts}
+        valueSelect={selectedSort}
+        onChangeSelect={sortPosts}
+        valueInput={searchQuery}
+        onChangeInput={e => setSearchQuery(e.target.value)}
       />
-      <CocktailList cocktails={cocktails}/>
+      <CocktailList cocktails={sortedSerchedPosts}/>
     </main>
   )
 }

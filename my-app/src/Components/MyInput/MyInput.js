@@ -1,12 +1,12 @@
 import "./MyInput.css"
 
-function MyInput() {
+function MyInput(props) {
   return (
     <input
       className="input"
       type="text"
-      placeholder="Let's find some drinks...">
-    </input>
+      {...props}
+    />
   )
 }
 
