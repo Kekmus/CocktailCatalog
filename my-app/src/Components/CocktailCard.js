@@ -1,6 +1,6 @@
 import "../styles/CocktailCard.css"
 
-function CocktailCard({name}) {
+function CocktailCard({name, id, remove}) {
   return(
     <div className="cocktail-item">
       <img
@@ -9,7 +9,10 @@ function CocktailCard({name}) {
         alt="cocktail"
       />
       <p className="cocktail-item__name">{name}</p>
-      <button className="cocktail-item__close-button" />
+      <button
+        className="cocktail-item__close-button"
+        onClick={() => {remove(id)}}
+      />
     </div>
 
   )

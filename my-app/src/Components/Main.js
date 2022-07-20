@@ -12,6 +12,9 @@ function Main() {
       {strDrink: 'Kek1', idDrink:'3333'},
       {strDrink: 'Kek4', idDrink:'4444'},
       {strDrink: 'Kek5', idDrink:'5555'},
+      {strDrink: 'Lol1', idDrink:'6666'},
+      {strDrink: 'Lol2', idDrink:'7777'},
+      {strDrink: 'Lol3', idDrink:'8888'},
     ]);
 
   const [selectedSort, setSelectedSort] = useState('');
@@ -36,6 +39,10 @@ function Main() {
     setSelectedSort(sort)
   }
 
+  function removeCocktail(id) {
+    setCoctails(cocktails.filter(a => a.idDrink !== id))
+  }
+
   return (
     <main className="main__container">
       <ControlCard
@@ -48,7 +55,10 @@ function Main() {
         valueInput={searchQuery}
         onChangeInput={e => setSearchQuery(e.target.value)}
       />
-      <CocktailList cocktails={sortedSerchedPosts}/>
+      <CocktailList
+        cocktails={sortedSerchedPosts}
+        remove={removeCocktail}
+      />
     </main>
   )
 }
