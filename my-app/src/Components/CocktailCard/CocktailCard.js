@@ -1,4 +1,4 @@
-import "../styles/CocktailCard.css"
+import "./CocktailCard.css"
 
 function CocktailCard({name, id, remove, image}) {
   return(

@@ -1,11 +1,10 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import ControlCard from "./CardsControl"
-import CocktailList from "./CocktailList"
-import "../styles/Main.css"
-import CocktailService from "../API/CocktailService"
+import ControlCard from "../CardsControl/CardsControl"
+import CocktailList from "../CocktailList/CocktailList"
+import "./Main.css"
+import CocktailService from "../../api/CocktailService"
 
 function Main() {
-  // eslint-disable-next-line no-unused-vars
   const [cocktails, setCoctails] = useState(
     []);
 
@@ -13,7 +12,6 @@ function Main() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const sortedCocktails = useMemo(() => {
-    console.log('kek')
     if(selectedSort) {
       return [...cocktails].sort((a, b) =>{ return a[selectedSort].localeCompare(b[selectedSort])})
     } else {

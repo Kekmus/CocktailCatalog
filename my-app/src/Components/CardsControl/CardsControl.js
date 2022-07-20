@@ -1,6 +1,6 @@
-import MyInput from "./MyInput/MyInput"
-import MySelect from "./MySelect/MySelect"
-import "../styles/CardsControl.css"
+import MyInput from "../MyInput/MyInput"
+import MySelect from "../MySelect/MySelect"
+import "./CardsControl.css"
 
 function ControlCard({options, valueInput, onChangeInput, onChangeSelect, valueSelect}) {
   return (
