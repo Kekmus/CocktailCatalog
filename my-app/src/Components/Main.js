@@ -1,21 +1,13 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import ControlCard from "./CardsControl"
 import CocktailList from "./CocktailList"
 import "../styles/Main.css"
+import CocktailService from "../API/CocktailService"
 
 function Main() {
   // eslint-disable-next-line no-unused-vars
   const [cocktails, setCoctails] = useState(
-    [
-      {strDrink: 'Kek2', idDrink:'1111'},
-      {strDrink: 'Kek3', idDrink:'2222'},
-      {strDrink: 'Kek1', idDrink:'3333'},
-      {strDrink: 'Kek4', idDrink:'4444'},
-      {strDrink: 'Kek5', idDrink:'5555'},
-      {strDrink: 'Lol1', idDrink:'6666'},
-      {strDrink: 'Lol2', idDrink:'7777'},
-      {strDrink: 'Lol3', idDrink:'8888'},
-    ]);
+    []);
 
   const [selectedSort, setSelectedSort] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
@@ -42,6 +34,32 @@ function Main() {
   function removeCocktail(id) {
     setCoctails(cocktails.filter(a => a.idDrink !== id))
   }
+
+  // async function fetchCocktails() {
+  //   const response = await axios.get("")
+  //   console.log(response)
+  // }
+
+  // async function fetchCocktail() {
+  //   const url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+  //   const res = await fetch(url);
+  //   const cocktail = await res.json();
+  //   return cocktail.drinks[0]
+  // }
+
+  // async function getCocktails() {
+  //   const cocktails = [];
+  //   for(let i = 0; i < 10; i++) {
+  //     await CocktailService.getAllCocktails()
+  //       .then((data) => {cocktails.push(data)})
+  //   }
+  //   return cocktails
+  // }
+
+  useEffect(() => {
+    const promise = CocktailService.getAllCocktails()
+    promise.then((cocktails) => {setCoctails(cocktails)})
+  }, [])
 
   return (
     <main className="main__container">
