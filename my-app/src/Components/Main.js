@@ -12,7 +12,7 @@ function Main() {
   const [selectedSort, setSelectedSort] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const sortedPosts = useMemo(() => {
+  const sortedCocktails = useMemo(() => {
     console.log('kek')
     if(selectedSort) {
       return [...cocktails].sort((a, b) =>{ return a[selectedSort].localeCompare(b[selectedSort])})
@@ -21,13 +21,13 @@ function Main() {
     }
   }, [selectedSort, cocktails]);
 
-  const sortedSerchedPosts = useMemo(() => {
-    return sortedPosts.filter(post => {
-      return post.strDrink.toLowerCase().includes(searchQuery.toLowerCase())
+  const sortedSerchedCocktails = useMemo(() => {
+    return sortedCocktails.filter(cocktail => {
+      return cocktail.strDrink.toLowerCase().includes(searchQuery.toLowerCase())
     })
-  }, [searchQuery, sortedPosts])
+  }, [searchQuery, sortedCocktails])
 
-  function sortPosts(sort) {
+  function sortCocktails(sort) {
     setSelectedSort(sort)
   }
 
@@ -48,12 +48,12 @@ function Main() {
           {value: 'idDrink', name: 'По ID'}
         ]}
         valueSelect={selectedSort}
-        onChangeSelect={sortPosts}
+        onChangeSelect={sortCocktails}
         valueInput={searchQuery}
         onChangeInput={e => setSearchQuery(e.target.value)}
       />
       <CocktailList
-        cocktails={sortedSerchedPosts}
+        cocktails={sortedSerchedCocktails}
         remove={removeCocktail}
       />
     </main>
