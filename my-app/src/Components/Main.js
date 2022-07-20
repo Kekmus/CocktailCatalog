@@ -35,27 +35,6 @@ function Main() {
     setCoctails(cocktails.filter(a => a.idDrink !== id))
   }
 
-  // async function fetchCocktails() {
-  //   const response = await axios.get("")
-  //   console.log(response)
-  // }
-
-  // async function fetchCocktail() {
-  //   const url = "https://www.thecocktaildb.com/api/json/v1/1/random.php"
-  //   const res = await fetch(url);
-  //   const cocktail = await res.json();
-  //   return cocktail.drinks[0]
-  // }
-
-  // async function getCocktails() {
-  //   const cocktails = [];
-  //   for(let i = 0; i < 10; i++) {
-  //     await CocktailService.getAllCocktails()
-  //       .then((data) => {cocktails.push(data)})
-  //   }
-  //   return cocktails
-  // }
-
   useEffect(() => {
     const promise = CocktailService.getAllCocktails()
     promise.then((cocktails) => {setCoctails(cocktails)})

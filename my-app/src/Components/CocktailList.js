@@ -8,6 +8,7 @@ function CocktailList({cocktails, remove}) {
       name={cocktail.strDrink}
       key={cocktail.idDrink}
       id={cocktail.idDrink}
+      image={cocktail.strDrinkThumb}
       remove={remove}
     />
   )

@@ -1,11 +1,11 @@
 import "../styles/CocktailCard.css"
 
-function CocktailCard({name, id, remove}) {
+function CocktailCard({name, id, remove, image}) {
   return(
     <div className="cocktail-item">
       <img
         className="cocktail-item__img"
-        src="http://dummyimage.com/350"
+        src={image}
         alt="cocktail"
       />
       <p className="cocktail-item__name">{name}</p>
