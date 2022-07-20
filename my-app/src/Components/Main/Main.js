@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import ControlCard from "../CardsControl/CardsControl"
 import CocktailList from "../CocktailList/CocktailList"
 import "./Main.css"
-import CocktailService from "../../api/CocktailService"
+import { getAllCocktails } from "../../api/CocktailService"
 
 function Main() {
   const [cocktails, setCoctails] = useState(
@@ -34,7 +34,7 @@ function Main() {
   }
 
   useEffect(() => {
-    const promise = CocktailService.getAllCocktails()
+    const promise = getAllCocktails()
     promise.then((cocktails) => {setCoctails(cocktails)})
   }, [])
 
