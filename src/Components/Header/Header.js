@@ -1,11 +1,11 @@
-import "./Header.css"
+import style from"./Header.module.css"
 
 
 function Header() {
   return (
-    <header className="header">
-      <div className="header__container">
-        <h1 className="logo">
+    <header className={style.header}>
+      <div className={style.header__container}>
+        <h1 className={style.logo}>
           cocktails
         </h1>
       </div>

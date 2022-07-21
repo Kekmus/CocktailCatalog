@@ -1,11 +1,11 @@
-.control__container > select {
+.mySelect {
   padding: 6px;
   border: none;
   font-size: 20px;
   height: 35px;
 }
 
-.control__container > select  {
+.mySelect  {
   width: 200px;
   background-color: var(--header-color);
   color: var(--text-color)

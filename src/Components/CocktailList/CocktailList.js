@@ -1,9 +1,9 @@
 import CocktailCard from "../CocktailCard/CocktailCard"
-import "./CocktailList.css"
+import style from "./CocktailList.module.css"
 
 function CocktailList({cocktails, remove}) {
   return (
-    <div className="cocktail-list">
+    <div className={style.cocktail_list}>
         {cocktails.map((cocktail) =>
           <CocktailCard
             name={cocktail.strDrink}

@@ -1,10 +1,10 @@
 import MyInput from "../MyInput/MyInput"
 import MySelect from "../MySelect/MySelect"
-import "./CardsControl.css"
+import styles from "./CardsControl.module.css"
 
 function ControlCard({options, valueInput, onChangeInput, onChangeSelect, valueSelect}) {
   return (
-    <div className="control__container">
+    <div className={styles.control__container}>
       <MyInput
         placeholder={"Let's find some drinks..."}
         value={valueInput}

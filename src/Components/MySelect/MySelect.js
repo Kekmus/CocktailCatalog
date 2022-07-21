@@ -1,8 +1,9 @@
-import "./MySelect.css"
+import style from "./MySelect.module.css"
 
 function MySelect({options, value, onChange}) {
   return (
     <select
+      className={style.mySelect}
       name="sortType"
       id=""
       value={value}

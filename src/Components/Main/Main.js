@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import ControlCard from "../CardsControl/CardsControl"
 import CocktailList from "../CocktailList/CocktailList"
-import "./Main.css"
+import style from "./Main.module.css"
 import { getAllCocktails } from "../../api/CocktailService"
 
 function Main() {
@@ -39,7 +39,7 @@ function Main() {
   }, [])
 
   return (
-    <main className="main__container">
+    <main className={style.main}>
       <ControlCard
         options={[
           {value: 'strDrink', name: 'По имени'},

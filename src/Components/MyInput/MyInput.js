@@ -1,9 +1,9 @@
-import "./MyInput.css"
+import style from "./MyInput.module.css"
 
 function MyInput(props) {
   return (
     <input
-      className="input"
+      className={style.myInput}
       type="text"
       {...props}
     />

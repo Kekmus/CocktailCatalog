@@ -1,16 +1,16 @@
-.control__container > input {
+.myInput {
   padding: 6px;
   border: none;
   font-size: 20px;
   height: 35px;
 }
 
-.control__container > input {
+.myInput {
   width: 400px;
   background-color: var(--header-color);
   color: var(--text-color)
 }
 
-.control__container > input::placeholder {
+.myInput::placeholder {
   color: var(--text-color)
 }
