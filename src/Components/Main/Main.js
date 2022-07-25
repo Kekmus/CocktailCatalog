@@ -34,7 +34,7 @@ function Main() {
   }
 
   useEffect(() => {
-    const promise = getAllCocktails()
+    const promise = getAllCocktails(10)
     promise.then((cocktails) => {setCoctails(cocktails)})
   }, [])
 
