@@ -1,0 +1,15 @@
+.footer__wrapper {
+  height: 100px;
+  background-color: var(--header-color);
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.github__link {
+  text-decoration: none;
+  color: var(--text-color);
+  text-transform: uppercase;
+}
